@@ -2,6 +2,12 @@
 const express = require("express");
 const { Client } = require('pg');
 require('dotenv').config()
+const cors = require('cors')
+
+// create an instance of the express application
+const app = express();
+app.use(cors())
+app.use(express.json())
 
 const client = new Client({
   user: 'azotamiota',
@@ -19,8 +25,6 @@ client.connect((err) => {
   }
 });
 
-// create an instance of the express application
-const app = express();
 
 // define a GET route for the root endpoint
 app.get("/", (req, res) => {
