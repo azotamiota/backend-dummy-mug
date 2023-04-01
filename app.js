@@ -44,7 +44,7 @@ app.get('/mugs', (req, res) => {
 
 process.on('SIGINT', () => {
   client.end(() => {
-    console.log('PostgreSQL client disconnected');
+    console.log('\nPostgreSQL client disconnected');
     process.exit(0);
   });
 });
