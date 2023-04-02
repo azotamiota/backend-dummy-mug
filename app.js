@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 const client = new Client({
-  user: 'azotamiota',
+  user: process.env.USER,
   host: 'localhost',
   database: 'mydatabase',
   password: process.env.PSQL_PWD,
