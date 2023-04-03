@@ -11,7 +11,7 @@ app.use(express.json())
 
 const client = new Client({
   user: process.env.USER,
-  host: 'localhost',
+  host: process.env.DB_ARN,
   database: 'mydatabase',
   password: process.env.PSQL_PWD,
   port: 5432,
