@@ -11,7 +11,7 @@ app.use(express.json())
 
 const client = new Client({
   user: process.env.USER,
-  host: process.env.DB_ENDPOINT,
+  host: process.env.DB_ADDRESS,
   database: 'mug_db',
   password: process.env.PSQL_PWD,
   port: 5432,
