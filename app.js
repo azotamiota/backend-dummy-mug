@@ -1,10 +1,9 @@
-// import the required libraries
 const express = require("express");
 const { Client } = require('pg');
 require('dotenv').config()
 const cors = require('cors')
+const os = require('os')
 
-// create an instance of the express application
 const app = express();
 app.use(cors())
 app.use(express.json())
@@ -25,8 +24,6 @@ client.connect((err) => {
   }
 });
 
-
-// define a GET route for the root endpoint
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to mugs backend" });
 });
@@ -49,7 +46,8 @@ process.on('SIGINT', () => {
   });
 });
 
-// start the server on port 3000
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+const server = app.listen(3000, () => {
+  const host = os.networkInterfaces().lo0[0].address
+  console.log(`Server started on http://${host}:3000`);
 });
+
