@@ -46,8 +46,8 @@ process.on('SIGINT', () => {
   });
 });
 
-const server = app.listen(3000, () => {
-  const host = os.networkInterfaces().lo0[0].address
-  console.log(`Server started on http://${host}:3000`);
-});
+const server = app.listen(5000, () => {
+  const host = os.networkInterfaces()['enX0'][0]['address']
+  console.log(`Server started on http://${host}:5000`);
+ });
 
